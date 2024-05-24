@@ -33,13 +33,26 @@
         <?php
 
         $resultProd = $DBCONN->query("SELECT * FROM `product`
-            WHERE `categoryCode` = '". $rowPC['id'] ."'
+            WHERE `CATEGORYCODE` = '". $rowProdCat['id'] ."'
             ORDER BY `name` ASC");
 
         while ($rowProd = $resultProd->fetch_assoc()) {
-            print_r($rowProd);
-            echo '<br>';
+            // print_r($rowProd);
+            // echo '<br>';
+            ?>
+
+            <p>
+                <b><?= $rowProd['name'] ?></b>
+                &nbsp;
+                &mdash;
+                &nbsp;
+                <?= $rowProd['price'] ?>
+            </p>
+
+            <?php
         }
+        
+        echo '<hr><br>';
     }
     
     ?>
