@@ -19,8 +19,15 @@
     // Associate Array ($arrayName['stringIndex'])
 
     while ($row = $result->fetch_assoc()) {
-        print_r($row);
-        echo '<br>';
+        // print_r($row);
+        // echo '<br>';
+        ?>
+        
+        <h2><?= $row['name'] ?></h2>
+        <p><i><?= $row['description'] ?></i></p>
+        <hr>
+
+        <?php
     }
     
     ?>
