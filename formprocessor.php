@@ -9,7 +9,20 @@
     <h1>CONTACT US</h1>
 
     <?php
-    echo "Here";
+    
+    echo $_POST['fullName'] . '<br>';
+
+    echo $_POST['phoneNumber'] . '<br>';
+
+    echo $_POST['emailAddress'] . '<br>';
+
+    echo $_POST['actualMessage'] . '<br>';
+
+    // Email
+    // TO: User (emailAddress)
+    // CC: Developer (my@emaol.com)
+
+    // Save to DB
     ?>
 </body>
 </html>
