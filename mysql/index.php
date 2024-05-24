@@ -11,23 +11,35 @@
     <?php
     $DBCONN = new mysqli('localhost', 'root', '', 'icsa_webprogramming_db', '3306');
 
-    $result = $DBCONN->query("SELECT * FROM `product_category`"); // Backtick Character
+    $resultPC = $DBCONN->query("SELECT * FROM `product_category`");
+    // ORDER BY `seqNo` ASC
+    // Backtick Character
 
     // $result->num_rows
 
     // Normal Array ($arrayName[9])
     // Associate Array ($arrayName['stringIndex'])
 
-    while ($row = $result->fetch_assoc()) {
+    while ($rowPC = $resultPC->fetch_assoc()) {
         // print_r($row);
         // echo '<br>';
         ?>
-        
-        <h2><?= $row['name'] ?></h2>
-        <p><i><?= $row['description'] ?></i></p>
+
+        <?php /* $rowPC['id'] */ ?>
+        <h2><?= $rowPC['name'] ?></h2>
+        <p><i><?= $rowPC['description'] ?></i></p>
         <hr>
 
         <?php
+
+        $resultProd = $DBCONN->query("SELECT * FROM `product`
+            WHERE `categoryCode` = '". $rowPC['id'] ."'
+            ORDER BY `name` ASC");
+
+        while ($prod = $resultProd->fetch_assoc()) {
+            print_r($prod);
+            echo '<br>';
+        }
     }
     
     ?>
