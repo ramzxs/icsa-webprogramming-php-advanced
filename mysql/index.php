@@ -33,7 +33,7 @@
         <?php
 
         $resultProd = $DBCONN->query("SELECT * FROM `product`
-            WHERE `CATEGORYCODE` = '". $rowProdCat['id'] ."'
+            WHERE `categoryCode` = '". $rowProdCat['id'] ."'
             ORDER BY `name` ASC");
 
         while ($rowProd = $resultProd->fetch_assoc()) {
