@@ -24,6 +24,12 @@
     // Email
     // TO: User (emailAddress)
     // CC: Developer (my@emaol.com)
+    // mail(
+    //     'user@email.com',
+    //     'Contact Us Form',
+    //     $_POST['actualMessage'],
+    //     'CC: ramzxs@gmail.com'
+    // );
 
     // Save to DB
     ?>
