@@ -9,6 +9,9 @@
     <h1>CONTACT US</h1>
 
     <?php
+
+    print_r($_POST);
+    echo '<hr>';
     
     echo $_POST['fullName'] . '<br>';
 
