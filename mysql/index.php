@@ -6,14 +6,23 @@
     <title>PHP and MySQL</title>
 </head>
 <body>
-    <h1>PHP and MySQL</h1>
+    <h1>PRODUCTS</h1>
 
     <?php
     $DBCONN = new mysqli('localhost', 'root', '', 'icsa_webprogramming_db', '3306');
 
-    $result = $DBCONN->query("SELECT * FROM `product_category`");
+    $result = $DBCONN->query("SELECT * FROM `product_category`"); // Backtick Character
 
-    echo $result->num_rows;
+    // $result->num_rows
+
+    // Normal Array ($arrayName[9])
+    // Associate Array ($arrayName['stringIndex'])
+
+    while ($row = $result->fetch_assoc()) {
+        print_r($row);
+        echo '<br>';
+    }
+    
     ?>
 </body>
 </html>
