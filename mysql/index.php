@@ -9,11 +9,16 @@
     <h1>PRODUCTS</h1>
 
     <?php
-    $DBCONN = new mysqli('localhost', 'root', '', 'icsa_webprogramming_db', '3306');
+    $DBCONN = new mysqli('localhost', 'root', '', 'icsa_webprogramming_db', '3307');
 
-    $resultProdCats = $DBCONN->query("SELECT * FROM `product_category`");
+    // PROCEDURAL
+    // -> OBJECT-ORIENTED PROGRAMMING (OOP)
+    $resultProdCats = $DBCONN->query("SELECT * FROM `product_category`"); // SQL
     // ORDER BY `seqNo` ASC
     // Backtick Character
+    
+    // Associate Arrays
+    // $arr[0] = 'value';
 
     // $result->num_rows
 
@@ -21,20 +26,20 @@
     // Associate Array ($arrayName['stringIndex'])
 
     while ($rowProdCat = $resultProdCats->fetch_assoc()) {
-        // print_r($row);
+        // print_r($rowProdCat);
         // echo '<br>';
         // $rowPC['id'] = Will hold the code of the product category
         ?>
 
+        <img src="assets/<?= $rowProdCat['id'] ?>.png" width="100%" alt="">
         <h2><?= $rowProdCat['name'] ?></h2>
         <p><i><?= $rowProdCat['description'] ?></i></p>
         <hr>
 
         <?php
-
         $resultProd = $DBCONN->query("SELECT * FROM `product`
             WHERE `categoryCode` = '". $rowProdCat['id'] ."'
-            ORDER BY `name` ASC");
+        ");
 
         while ($rowProd = $resultProd->fetch_assoc()) {
             // print_r($rowProd);

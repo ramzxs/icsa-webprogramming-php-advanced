@@ -13,7 +13,7 @@
     print_r($_POST);
     echo '<hr>';
     
-    echo $_POST['fullName'] . '<br>';
+    echo $_POST['fullName'] . '<br>'; // Array out of bound; Index not found; Array key invalid
 
     echo $_POST['phoneNumber'] . '<br>';
 

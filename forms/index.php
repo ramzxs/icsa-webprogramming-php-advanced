@@ -14,7 +14,7 @@
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <td>Name: *</td>
-            <td> <input name="fullName" type="text" required> </td>
+            <td> <input name="NAME" type="text" required> </td>
         </tr>
         <tr>
             <td>Phone:</td>
