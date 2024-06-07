@@ -9,6 +9,7 @@
     <h1>PRODUCTS</h1>
 
     <?php
+    // Object
     $DBCONN = new mysqli('localhost', 'root', '', 'icsa_webprogramming_db', '3307');
 
     // PROCEDURAL
